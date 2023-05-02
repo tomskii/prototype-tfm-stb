@@ -21,7 +21,11 @@ module.exports = {
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
   'facility-1-name': 'Compressors Ltd',
-  'facility-1-ukef-id': '0020001371',
+  'facility-1-byer': 'Compressors Ltd',
+  'facility-1-deal-id': '0020001371',
+
+  'facility-1-ukef-id': '0030597665',
+
   'facility-1-ref': '0239397',
   'facility-1-start-date': '16 June 2022',
   'facility-1-end-date': '16 June 2024',
@@ -30,6 +34,8 @@ module.exports = {
   'facility-1-interest-margin': '2%',
   'facility-1-fee-payable': '1.8000%',
   'facility-1-credit-rating': 'Good (BB-)',
+
+  'facility-1-bank': 'HSBC',
 
   'facility-1-prob-default': '1.0%',
   'facility-1-limit': '600,000.00',

@@ -20,14 +20,95 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
-<div class="govuk-panel govuk-panel--confirmation blue-panel">
-  <h1 class="govuk-panel__title">
-    [Content]
-  </h1>
-  <div class="govuk-panel__body">
-    [Content]
+
+<!-- start of summary panel -->
+<div data-cy="case-summary" class="case-summary">
+  <div>
+      <div class="case-summary-deal-id">
+          <div class="label">Deal ID</div>
+          <div class="ukef-heading-l" data-cy="ukef-deal-id">0030597665</div>
+      </div>
+      <div class="case-summary-supplier chevron-right" data-cy="supplier-column">
+          <div class="label">
+              <span data-cy="supplier-type">
+                  Exporter
+              </span>
+          </div>
+          <div class="ukef-heading-l" data-cy="exporter-name">{{ data['facility-1-name'] }}</div>
+      </div>
+      <div class="case-summary-buyer" data-cy="buyer-name-column">
+          <div class="label"><!--Buyer label--></div>
+          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name--></div>
+      </div>
+  </div>
+  <div class="case-summary-overview-container">
+      <div class="ukef-grid-column-one-sixth case-summary-overview-column">
+          <div class="case-summary-overview-item case-summary-overview-item__stage">
+              <div data-cy="ukef-deal-stage" class="ukef-deal-stage">
+                  <div class="ukef-heading-xs ukef-deal-stage__title">Deal stage</div>
+                  <strong class="govuk-tag govuk-tag--blue ukef-body-s govuk-!-font-weight-bold"
+                      data-cy="ukef-deal-stage-value">
+                      Confirmed
+                  </strong>
+              </div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Date received</div>
+              <div class="ukef-body-s" data-cy="date-received">
+                {{ data['facility-1-start-date'] }}
+              </div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column ukef-grid-column-one-sixth">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Product</div>
+              <div class="ukef-body-s" data-cy="ukef-product">GEF</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Type</div>
+              <div class="ukef-body-s" data-cy="submission-type">Automatic Inclusion Notice</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Bank</div>
+              <div class="ukef-body-s" data-cy="bank-name">{{ data['facility-1-bank'] }}</div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column govuk-grid-column-one-third">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Export description</div>
+              <div class="ukef-body-s" data-cy="export-description">-</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Destination Country</div>
+              <div class="ukef-body-s" data-cy="destination-country">-</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Agent</div>
+              <div class="ukef-body-s">-</div>
+          </div>
+      </div>
+      <div class="case-summary-overview-column govuk-grid-column-one-third">
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Export contract value</div>
+              <div class="ukef-body-s">
+                  <span data-cy="contract-value">
+                      -
+                  </span>
+                  <span data-cy="contract-value-in-gbp"></span>
+              </div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">Total facilities in this deal</div>
+              <div class="ukef-body-s" data-cy="total-facilities-in-gbp">GBP {{ data['facility-1-limit'] }}</div>
+          </div>
+          <div class="case-summary-overview-item">
+              <div class="ukef-heading-xs">UKEF exposure for this deal</div>
+              <div class="ukef-body-s" data-cy="total-ukef-exposure">GBP {{ data['facility-1-exposure'] }}</div>
+          </div>
+      </div>
   </div>
 </div>
+<!-- end of summary panel -->
 
 {{ mojSubNavigation({
   label: 'Sub navigation',
