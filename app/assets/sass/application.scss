@@ -2,15 +2,46 @@
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
-
 // Add extra styles here
+html {}
+
 html, body, address, blockquote, div, dl, form, h1, h2, h3, h4, h5, h6, ol, p, pre, table, ul,
 dd, dt, li, tbody, td, tfoot, th, thead, tr, button, del, ins, map, object,
 a, abbr, acronym, b, bdo, big, br, cite, code, dfn, em, i, img, kbd, q, samp, small, span,
-strong, sub, sup, tt, var, legend, fieldset, label, .govuk-input, textarea {
+strong, sub, sup, tt, var, legend, fieldset, label, .govuk-input, textarea, caption {
 //font-family: "helvetica neue",Arial,Helvetica,sans-serif!important;
-font-family: arial,helvetica,sans-serif!important;}
+font-family: arial,helvetica,sans-serif!important; }
 .moj-sub-navigation {margin-bottom: 0 }
 .blue-panel { background: $govuk-brand-colour;}
 
-$govuk-page-width: 1360px;
+.moj-header__container,  .moj-primary-navigation__container {
+    max-width: 1360px;
+}
+
+@media screen and (max-width: 1440px) {
+    .moj-header__container,  .moj-primary-navigation__container {
+        margin: 0 30px
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .moj-header__container,  .moj-primary-navigation__container {
+        margin: 0 15px
+    }
+}
+
+.moj-sub-navigation__item, .govuk-tabs__title, .govuk-tabs__list-item, .govuk-summary-list, .govuk-table, .govuk-tag {
+    font-size: 1rem;
+}
+
+.govuk-section-break--visible {
+    border-bottom: 3px solid $govuk-text-colour !important;
+}
+
+.js-enabled .govuk-tabs__panel {
+    margin-bottom: 0;
+    padding: 30px 0!important;
+    border: 0;
+    border-top: 0;
+}
+

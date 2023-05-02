@@ -2,6 +2,11 @@
 
 {% set containerClasses = "app-width-container" %}
 
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/settings.scss" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block pageTitle %}
 TFM – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -70,15 +75,15 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#ammendments">
-            Ammendments
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#monthly-reports">
             Monthly reports
           </a>
         </li>
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#amendments">
+              Amendments
+            </a>
+          </li>
       </ul>
       
         <div class="govuk-tabs__panel" id="details">
@@ -86,7 +91,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Overview</h2>
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                    <dt class="govuk-summary-list__key govuk-!-width-one-third">
                         Product
                     </dt>
                     <dd class="govuk-summary-list__value">
@@ -106,10 +111,10 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                    <dt class="govuk-summary-list__key">
                         Facility stage
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-!-width-one-half">
+                    <dd class="govuk-summary-list__value">
                         <strong class="govuk-tag govuk-tag--blue">Issued</strong>
                     </dd>
                 </div>
@@ -136,7 +141,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Value and exposure</h2>
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key govuk-!-width-one-half">Value (export currency)</dt>
+                    <dt class="govuk-summary-list__key govuk-!-width-one-third">Value (export currency)</dt>
                     <dd class="govuk-summary-list__value">GBP {{ data['facility-1-limit'] }}</dd>
                 </div>
                 <div class="govuk-summary-list__row">
@@ -163,7 +168,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Dates</h2>
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
                     Inclusion notice received
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -213,7 +218,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
             <h2 class="govuk-heading-l">Pricing and risk</h2>
             <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-9">
                 <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key govuk-!-width-one-half">
+                <dt class="govuk-summary-list__key govuk-!-width-one-third">
                     Bank's interest margin
                 </dt>
                 <dd class="govuk-summary-list__value">
@@ -243,18 +248,11 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <!-- end of Details -->
-        
-        
-
-
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ammendments">
-        <h2 class="govuk-heading-l">[Content]</h2>
-      </div>
 
       <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="monthly-reports">
 
         <table class="govuk-table">
-            <caption class="govuk-table__caption govuk-table__caption--m">[Header]</caption>
+            <caption class="govuk-table__caption govuk-table__caption--m">Reported details</caption>
             <thead class="govuk-table__head">
               <tr class="govuk-table__row">
                 <th scope="col" class="govuk-table__header">Month</th>
@@ -330,9 +328,14 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
               </tr>
             </tbody>
           </table>
-
       </div>
-      
+      <!-- end of Monthly reports -->
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="amendments">
+        <h2 class="govuk-heading-l">[Content]</h2>
+      </div>
+      <!-- end of Ammendments -->
+
     </div>
     <!-- end of tabs -->
   </div>
