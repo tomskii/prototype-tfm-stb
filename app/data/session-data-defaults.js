@@ -18,26 +18,44 @@ module.exports = {
   'signed-in-name': 'John Smith',
   'last-month-name': 'John Smith',
 
+  // Banks
+  'bank-1-name': 'HSBC UK Bank',
+  'bank-2-name': 'Barclays Bank',
+  'bank-3-name': 'Lloyds Bank',
+  'bank-4-name': 'Bank of Scotland',
+  'bank-5-name': 'Westminster Bank',
+  'bank-6-name': 'Royal Bank of Scotland',
+  'bank-7-name': 'Ulster Bank',
+  'bank-8-name': 'Santander UK plc.',
+  'bank-9-name': 'Newable Bank',
+  'bank-10-name': 'Emirates NBD Bank (P.J.S.C)',
+
+  'bank-1-report-received': '4 May 2023',
+  'bank-2-report-received': '3 May 2023',
+  'bank-3-report-received': '3 April 2023',
+  'bank-4-report-received': '2 March 2023',
+  'bank-5-report-received': '10 April 2023',
+  'bank-6-report-received': '4 May 2023',
+  'bank-7-report-received': '8 May 2023',
+  'bank-8-report-received': '3 May 2023',
+  'bank-9-report-received': '4 May 2023',
+  'bank-10-report-received': '1 May 2023',
+
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
   'facility-1-name': 'Compressors Ltd',
-  'facility-1-byer': 'Compressors Ltd',
+  'facility-1-buyer': 'Compressors Ltd',
   'facility-1-deal-id': '0020001371',
-
   'facility-1-ukef-id': '0030597665',
-
   'facility-1-ref': '0239397',
   'facility-1-start-date': '16 June 2022',
   'facility-1-end-date': '16 June 2024',
   'facility-1-tenor': '36 months',
-
   'facility-1-interest-margin': '2%',
   'facility-1-fee-payable': '1.8000%',
   'facility-1-credit-rating': 'Good (BB-)',
-
   'facility-1-bank': 'HSBC',
-
-  'facility-1-prob-default': '1.0%',
+  'facility-1-type': 'Cash',
   'facility-1-limit': '600,000.00',
   'facility-1-cover': '80%',
   'facility-1-max': '480,000.00',
