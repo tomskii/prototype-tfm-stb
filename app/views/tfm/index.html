@@ -76,10 +76,11 @@ Facilities – {{ serviceName }} – GOV.UK Prototype Kit
           <th scope="col" class="govuk-table__header" aria-sort="none">Product</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Exporter</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Bank</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Value (export currency)</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Cover end date</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Facility stage</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Bank</th>
+          
         </tr>
       </thead>
     
@@ -89,12 +90,11 @@ Facilities – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell">GEF</td>
           <td class="govuk-table__cell">{{ data['facility-1-type'] }}</td>
           <td class="govuk-table__cell">{{ data['facility-1-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['facility-1-bank'] }}</a></td>
           <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
           <td class="govuk-table__cell">{{ data['facility-1-end-date'] }}</td>
           <td class="govuk-table__cell">Issued</td>
-          <td class="govuk-table__cell"><a href="#">HSBC</a></td>
         </tr>
-
       </tbody>
     </table>
 
