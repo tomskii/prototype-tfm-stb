@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-Reports – {{ serviceName }} – GOV.UK Prototype Kit
+Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -25,7 +25,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
               <a class="moj-primary-navigation__link" href="index">All facilities</a>
             </li>
             <li class="moj-primary-navigation__item">
-              <a class="moj-primary-navigation__link" aria-current="page" href="reports">Reports</a>
+              <a class="moj-primary-navigation__link" aria-current="page" href="reports">Bank reports</a>
             </li>
           </ul>
         </nav>
@@ -43,23 +43,26 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
   <div class="govuk-grid-column-two-thirds">
     
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
-      Reports
+      Bank reports 
     </h1>
 
+    <h2 class="govuk-heading-m">Current reporting period: {{ data['report-month'] }}</h2>
+
+    <h3 class="govuk-heading-s">Reports are due by {{ data['this-month-report-due'] }}</h3>
     
     <table class="govuk-table" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Bank</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Last received report </th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Report status</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Bank</th>
+
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Report status</th>
           </tr>
         </thead>
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank1">{{ data['bank-1-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230504">{{ data['bank-1-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received
@@ -68,7 +71,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-2-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230503">{{ data['bank-2-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received
@@ -77,7 +80,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-3-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230403">{{ data['bank-3-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="2">
               <strong class="govuk-tag govuk-tag--blue">
               Due
@@ -87,15 +90,15 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-4-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230302">{{ data['bank-4-report-received'] }}</td>
-            <td class="govuk-table__cell" data-sort-value="1">
-              <strong class="govuk-tag govuk-tag--red">
-                Overdue
+
+            <td class="govuk-table__cell" data-sort-value="2">
+              <strong class="govuk-tag govuk-tag--blue">
+                Due
               </strong></td>
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-5-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230410">{{ data['bank-5-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="2">
                 <strong class="govuk-tag govuk-tag--blue">
                 Due
@@ -104,7 +107,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-6-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230504">{{ data['bank-6-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received
@@ -113,7 +116,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-7-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230508">{{ data['bank-7-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
               <strong class="govuk-tag govuk-tag--green">
               Received
@@ -122,7 +125,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-8-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230503">{{ data['bank-8-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received
@@ -131,7 +134,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-9-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230504">{{ data['bank-9-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received
@@ -140,7 +143,7 @@ Reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-10-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="20230501">{{ data['bank-10-report-received'] }}</td>
+
             <td class="govuk-table__cell" data-sort-value="3">
                 <strong class="govuk-tag govuk-tag--green">
                 Received

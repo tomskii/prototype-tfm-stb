@@ -25,7 +25,7 @@ Facilities – {{ serviceName }} – GOV.UK Prototype Kit
               <a class="moj-primary-navigation__link" aria-current="page" href="index">All facilities</a>
             </li>
             <li class="moj-primary-navigation__item">
-              <a class="moj-primary-navigation__link" href="reports">Reports</a>
+              <a class="moj-primary-navigation__link" href="reports">Bank reports</a>
             </li>
           </ul>
         </nav>
@@ -90,9 +90,64 @@ Facilities – {{ serviceName }} – GOV.UK Prototype Kit
           <td class="govuk-table__cell">GEF</td>
           <td class="govuk-table__cell">{{ data['facility-1-type'] }}</td>
           <td class="govuk-table__cell">{{ data['facility-1-name'] }}</td>
-          <td class="govuk-table__cell"><a href="bank1">{{ data['facility-1-bank'] }}</a></td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
           <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
           <td class="govuk-table__cell">{{ data['facility-1-end-date'] }}</td>
+          <td class="govuk-table__cell">Issued</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="facility1">{{ data['facility-2-ukef-id'] }}</a></td>
+          <td class="govuk-table__cell">GEF</td>
+          <td class="govuk-table__cell">{{ data['facility-2-type'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-2-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
+          <td class="govuk-table__cell">GBP {{ data['facility-2-limit'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-2-end-date'] }}</td>
+          <td class="govuk-table__cell">Issued</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="facility1">{{ data['facility-3-ukef-id'] }}</a></td>
+          <td class="govuk-table__cell">GEF</td>
+          <td class="govuk-table__cell">{{ data['facility-3-type'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-3-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
+          <td class="govuk-table__cell">GBP {{ data['facility-3-limit'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-3-end-date'] }}</td>
+          <td class="govuk-table__cell">Issued</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="facility1">{{ data['facility-4-ukef-id'] }}</a></td>
+          <td class="govuk-table__cell">GEF</td>
+          <td class="govuk-table__cell">{{ data['facility-4-type'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-4-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
+          <td class="govuk-table__cell">GBP {{ data['facility-4-limit'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-4-end-date'] }}</td>
+          <td class="govuk-table__cell">Issued</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="facility1">{{ data['facility-5-ukef-id'] }}</a></td>
+          <td class="govuk-table__cell">GEF</td>
+          <td class="govuk-table__cell">{{ data['facility-5-type'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-5-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
+          <td class="govuk-table__cell">GBP {{ data['facility-5-limit'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-5-end-date'] }}</td>
+          <td class="govuk-table__cell">Issued</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="facility1">{{ data['facility-6-ukef-id'] }}</a></td>
+          <td class="govuk-table__cell">GEF</td>
+          <td class="govuk-table__cell">{{ data['facility-6-type'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-6-name'] }}</td>
+          <td class="govuk-table__cell"><a href="bank1">{{ data['bank-1-name'] }}</a></td>
+          <td class="govuk-table__cell">GBP {{ data['facility-6-limit'] }}</td>
+          <td class="govuk-table__cell">{{ data['facility-6-end-date'] }}</td>
           <td class="govuk-table__cell">Issued</td>
         </tr>
       </tbody>

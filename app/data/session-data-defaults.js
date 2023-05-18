@@ -25,16 +25,16 @@ module.exports = {
   'last-month-name': 'John Smith',
 
   // Banks
-  'bank-1-name': 'HSBC UK Bank',
+  'bank-1-name': 'Bank of Scotland',
   'bank-2-name': 'Barclays Bank',
-  'bank-3-name': 'Lloyds Bank',
-  'bank-4-name': 'Bank of Scotland',
-  'bank-5-name': 'Westminster Bank',
-  'bank-6-name': 'Royal Bank of Scotland',
-  'bank-7-name': 'Ulster Bank',
+  'bank-3-name': 'Emirates NBD Bank (P.J.S.C)',
+  'bank-4-name': 'HSBC UK Bank',
+  'bank-5-name': 'Lloyds Bank',
+  'bank-6-name': 'Newable Bank',
+  'bank-7-name': 'Royal Bank of Scotland',
   'bank-8-name': 'Santander UK plc.',
-  'bank-9-name': 'Newable Bank',
-  'bank-10-name': 'Emirates NBD Bank (P.J.S.C)',
+  'bank-9-name': 'Ulster Bank',
+  'bank-10-name': 'Westminster Bank',
 
   'bank-1-report-date-received': '4 May 2023',
   'bank-2-report-date-received': '3 May 2023',
@@ -71,7 +71,7 @@ module.exports = {
   'facility-1-interest-margin': '2%',
   'facility-1-fee-payable': '1.8000%',
   'facility-1-credit-rating': 'Good (BB-)',
-  'facility-1-bank': 'HSBC UK Bank',
+  // 'facility-1-bank': 'HSBC UK Bank',
   'facility-1-type': 'Cash',
   'facility-1-limit': '600,000.00',
   'facility-1-cover': '80%',
@@ -98,6 +98,9 @@ module.exports = {
   'facility-2-exposure': '100,000.00',
   'facility-2-accrued': '3000.00',
   'facility-2-paid': '800.00',
+  'facility-2-type': 'Cash',
+  'facility-2-end-date': '18 September 2026',
+  'facility-2-bank': 'HSBC UK Bank',
 
   // FACILITY 3 VALUES
   'facility-3-name': 'Pharmaceuticals Ltd',
@@ -109,6 +112,9 @@ module.exports = {
   'facility-3-exposure': '160,000.00',
   'facility-3-accrued': '50,000.00',
   'facility-3-paid': '2,000.00',
+  'facility-3-type': 'Cash',
+  'facility-3-end-date': '16 February 2025',
+  'facility-3-bank': 'HSBC UK Bank',
 
   // FACILITY 4 VALUES  
   'facility-4-name': 'Motors Ltd',
@@ -120,6 +126,9 @@ module.exports = {
   'facility-4-exposure': '400,000.00',
   'facility-4-accrued': '20,000.00',
   'facility-4-paid': '2,000.00',
+  'facility-4-type': 'Cash',
+  'facility-4-end-date': '23 Mar 2025',
+  'facility-4-bank': 'HSBC UK Bank',
 
   // FACILITY 5 VALUES
   'facility-5-name': 'A1 Manifolds Ltd',
@@ -131,6 +140,9 @@ module.exports = {
   'facility-5-exposure': '1,520,000.00',
   'facility-5-accrued': '50,000.00',
   'facility-5-paid': '5,000.00',
+  'facility-5-type': 'Cash',
+  'facility-5-end-date': '23 July 2025',
+  'facility-5-bank': 'HSBC UK Bank',
 
   // FACILITY 6 VALUES
   'facility-6-name': 'XYZ Aircrafts Ltd',
@@ -140,6 +152,9 @@ module.exports = {
   'facility-6-max': '800,000.00',
   'facility-6-utilisation': '790,000.00',
   'facility-6-exposure': '632,000.00',
-  'facility-6-accrued': '727.46',
-  'facility-6-paid': '639.11',
+  'facility-6-accrued': '15,000.00',
+  'facility-6-paid': '1,200.00',
+  'facility-6-type': 'Cash',
+  'facility-6-end-date': '12 March 2023',
+  'facility-6-bank': 'HSBC UK Bank',
 }

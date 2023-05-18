@@ -8,7 +8,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-TFM – {{ serviceName }} – GOV.UK Prototype Kit
+Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -71,7 +71,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
           </div>
           <div class="case-summary-overview-item">
               <div class="ukef-heading-xs">Bank</div>
-              <div class="ukef-body-s" data-cy="bank-name">{{ data['facility-1-bank'] }}</div>
+              <div class="ukef-body-s" data-cy="bank-name">{{ data['bank-1-name'] }}</div>
           </div>
       </div>
       <div class="case-summary-overview-column govuk-grid-column-one-third">
@@ -341,7 +341,7 @@ TFM – {{ serviceName }} – GOV.UK Prototype Kit
                 <th scope="col" class="govuk-table__header">Value</th>
                 <th scope="col" class="govuk-table__header">Utilisation</th>
                 <th scope="col" class="govuk-table__header">UKEF cover</th>
-                <th scope="col" class="govuk-table__header">UKEF's exposure</th>
+                <th scope="col" class="govuk-table__header">UKEF exposure</th>
                 <th scope="col" class="govuk-table__header">Fee payable to UKEF</th>
                 <th scope="col" class="govuk-table__header">Fees accrued</th>
               </tr>
