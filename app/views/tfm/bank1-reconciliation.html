@@ -1,0 +1,163 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+{{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head.html" %}
+  <div class="moj-primary-navigation">
+    <div class="moj-primary-navigation__container">
+      <div class="moj-primary-navigation__nav">
+        <nav class="moj-primary-navigation" aria-label="Primary navigation">
+          <ul class="moj-primary-navigation__list">
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="#">All deals</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="index">All facilities</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" aria-current="page" href="reports">Bank reports</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reconciliation</h1>
+    
+    <h2 class="govuk-heading-m govuk-!-font-weight-regular">{{ data['bank-1-name'] }}, {{ data['report-month'] }}</h2>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <dl class="govuk-summary-list">
+            
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-half">
+            Reported fee payable
+            </dt>
+            <dd class="govuk-summary-list__value">
+            GBP 12,000.00
+            </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+            Payment reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+            AB12345
+            </dd>
+            </div>
+
+            </dl>
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend--m">
+                Has GBP 12,000.00 been received?
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="yes" name="payment" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="yes">
+                    Yes
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="no" name="payment" type="radio" value="no" data-aria-controls="conditional-no">
+                  <label class="govuk-label govuk-radios__label" for="no">
+                    No
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-no">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="contact-by-email">
+                        Amount received
+                      </label>
+                      <div class="govuk-input__prefix" aria-hidden="true">GBP</div><input class="govuk-input govuk-!-width-one-third" id="amount-received" name="amount-received" type="text" spellcheck="false">
+                    </div>
+                  </div>
+
+              </div>
+            </fieldset>
+          </div>
+
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    When was the payment?
+              </legend>
+              <div id="passport-issued-hint" class="govuk-hint">
+                For example, 27 3 2023
+              </div>
+              <div class="govuk-date-input" id="passport-issued">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                      Day
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                      Month
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                      Year
+                    </label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+    </div>
+
+    
+
+    <button class="govuk-button" data-module="govuk-button">
+    Save and continue
+    </button>
+
+</div>
+
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+{% endblock %}
