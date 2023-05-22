@@ -302,7 +302,7 @@
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total fees payable:</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 12,000.00<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
                 
               </tr>
             </tbody>
@@ -310,15 +310,90 @@
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
-          <form class="form" action="bank1-reconciliation.html" method="get">
+          
           <h2 class="govuk-heading-l">Reconciliation</h2>
-         
+
+          {% if 'not-done' in data['bank1-reconciliation'] %}
+          <!-- Display form and button if reconciliation not done yet -->
+          <form class="form" action="bank1-reconciliation.html" method="get">
+
           <p class="govuk-body">Reconciliation has not been completed yet.</p>
 
           <button class="govuk-button" data-module="govuk-button">
             Start reconciliation
           </button>
         </form>
+        <!--end of form -->
+
+          
+          {% else %}
+
+          <!-- Display reconciliation data -->
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+        <dl class="govuk-summary-list">
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reported fee payable
+            </dt>
+            <dd class="govuk-summary-list__value">
+              GBP {{ data['bank-1-fee-payable'] }}
+            </dd>
+            <dd>
+            </dd>
+          </div>  
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Payment received
+            </dt>
+            <dd class="govuk-summary-list__value">
+              GBP {{ data['bank-1-fee-payable'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!--<a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> change</span>
+              </a>-->
+            </dd>
+          </div>  
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date received
+            </dt>
+            <dd class="govuk-summary-list__value">
+              8 May 2023
+            </dd>
+          </div> 
+          
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reconciled by
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['signed-in-name'] }}, {{ data['todays-date-full'] }} at {{ data['time-now'] }}
+            </dd>
+          </div>
+
+        </dl>
+
+        <!--end of reconciliation data -->
+
+          {% endif %}
+
+
+
+          
+
+        
+
+      </div>
+    </div>
+
+
         </div>
       </div>
 

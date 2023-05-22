@@ -39,7 +39,7 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
-
+    <form class="form" action="bank1.html#reconciliation" method="get">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reconciliation</h1>
     
     <h2 class="govuk-heading-m govuk-!-font-weight-regular">{{ data['bank-1-name'] }}, {{ data['report-month'] }}</h2>
@@ -141,12 +141,11 @@
         </div>
     </div>
 
-    
-
     <button class="govuk-button" data-module="govuk-button">
     Save and continue
     </button>
-
+    <input type="hidden" name="bank1-reconciliation" value="done">
+  </form>
 </div>
 
 

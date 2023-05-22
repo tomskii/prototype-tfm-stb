@@ -19,7 +19,10 @@ module.exports = {
   'todays-date-full': '9 May 2023',
   'this-month-report-due': '16 May 2023',
   'next-month-report-due': '14 June 2023',
+  'time-now': '9:54am',
   
+  'bank1-reconciliation': 'not-done',
+
   // Names
   'signed-in-name': 'John Smith',
   'last-month-name': 'John Smith',
@@ -57,6 +60,8 @@ module.exports = {
   'bank-8-report-received': 'April 2023',
   'bank-9-report-received': 'April 2023',
   'bank-10-report-received': 'April 2023',
+
+  'bank-1-fee-payable': '12,000.00',
 
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
@@ -157,4 +162,6 @@ module.exports = {
   'facility-6-type': 'Cash',
   'facility-6-end-date': '12 March 2023',
   'facility-6-bank': 'HSBC UK Bank',
+
+
 }
