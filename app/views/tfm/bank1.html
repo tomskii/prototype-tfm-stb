@@ -223,8 +223,21 @@
           </li>
         </ul>
         <div class="govuk-tabs__panel" id="report">
+          
+          
           <h2 class="govuk-heading-l">Report</h2>
           
+          {% if 'Yes' in data['bank1-payment'] %}
+            <p class="govuk-body"><a href="#reconciliation">Payment received</a> matches reported payment.</p>
+            
+            {% elseif 'No' in data['bank1-payment'] %}
+            <p class="govuk-body"><a href="#reconciliation">Payment received</a> does not match reported payment.</p>
+            
+            {% elseif '' in data['bank1-payment'] %}
+            <p class="govuk-body">Reconciliation has not been completed yet.</p>
+
+            {% endif %}
+
           <table class="govuk-table">
             <caption class="govuk-table__caption govuk-table__caption--l"></caption>
             <thead class="govuk-table__head">
@@ -302,11 +315,13 @@
               </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total fees payable:</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">{{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
                 
               </tr>
             </tbody>
           </table>
+
+          
         </div>
 
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="reconciliation">
@@ -346,6 +361,8 @@
             </dd>
           </div>  
           
+          {% if 'Yes' in data['bank1-payment'] %}
+          <!-- Display the reported bank fee payable -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Payment received
@@ -354,11 +371,24 @@
               GBP {{ data['bank-1-fee-payable'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <!--<a class="govuk-link" href="#">
-                Change<span class="govuk-visually-hidden"> change</span>
-              </a>-->
+
             </dd>
-          </div>  
+          </div> 
+          
+          {% else %}
+          <!-- Display the fee received -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Amount received
+            </dt>
+            <dd class="govuk-summary-list__value">
+                GBP {{ data['bank1-amount-received'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            </dd>
+          </div>
+          {% endif %}
+
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">

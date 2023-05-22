@@ -20,8 +20,6 @@ module.exports = {
   'this-month-report-due': '16 May 2023',
   'next-month-report-due': '14 June 2023',
   'time-now': '9:54am',
-  
-  'bank1-reconciliation': 'not-done',
 
   // Names
   'signed-in-name': 'John Smith',
@@ -62,6 +60,9 @@ module.exports = {
   'bank-10-report-received': 'April 2023',
 
   'bank-1-fee-payable': '12,000.00',
+
+  'bank1-reconciliation': 'not-done',
+  'bank1-payment': '',
 
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
