@@ -46,9 +46,9 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
       Bank reports 
     </h1>
 
-    <h2 class="govuk-heading-m">Current reporting period: {{ data['report-month'] }}</h2>
+    <h2 class="govuk-heading-m">Current reporting period {{ data['report-month'] }}</h2>
 
-    <h3 class="govuk-heading-s">Reports are due by {{ data['this-month-report-due'] }}</h3>
+    <p class="govuk-body">April reports due by {{ data['this-month-report-due'] }}</p>
     
     <table class="govuk-table" data-module="moj-sortable-table">
         <thead class="govuk-table__head">

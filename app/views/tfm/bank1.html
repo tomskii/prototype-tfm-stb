@@ -1,7 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block pageTitle %}
-{{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['bank-1-name'] }} {{ data['report-month'] }} report – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -201,7 +201,7 @@
 
   <div class="ukef-grid-column-six-seventh">
     
-    <span class="govuk-caption-xl">{{ data['report-month'] }}</span>
+    <span class="govuk-caption-xl" id="report-month">{{ data['report-month'] }}</span>
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
       {{ data['bank-1-name'] }}
     </h1>
@@ -228,15 +228,22 @@
           <h2 class="govuk-heading-l">Report</h2>
           
           {% if 'Yes' in data['bank1-payment'] %}
-            <p class="govuk-body"><a href="#reconciliation">Payment received</a> matches reported payment.</p>
+          <!-- payment matches -->
+          <div class="govuk-inset-text">
+            Payment received matches reported fee payable.
+          </div>
             
-            {% elseif 'No' in data['bank1-payment'] %}
-            <p class="govuk-body"><a href="#reconciliation">Payment received</a> does not match reported payment.</p>
-            
-            {% elseif '' in data['bank1-payment'] %}
-            <p class="govuk-body">Reconciliation has not been completed yet.</p>
-
-            {% endif %}
+          {% elseif 'No' in data['bank1-payment'] %}
+          <!-- payment doesn't match -->
+            {{ govukWarningText({
+              text: "Payment received does not match reported fee payable.",
+              iconFallbackText: "Warning"
+            }) }}
+          
+          {% elseif '' in data['bank1-payment'] %}
+          <!-- reconciliation not done -->
+            <p class="govuk-body"><a href="#reconciliation">Reconciliation</a> has not been completed yet.</p>
+          {% endif %}
 
           <table class="govuk-table">
             <caption class="govuk-table__caption govuk-table__caption--l"></caption>
@@ -314,10 +321,30 @@
                 <td class="govuk-table__cell">GBP {{ data['facility-6-paid'] }} </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total fees payable:</th>
+                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total fees payable</th>
                 <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
-                
               </tr>
+
+              {% if 'Yes' in data['bank1-payment'] %}
+              <!-- payment matches -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}</td>
+              </tr>
+                
+              {% elseif 'No' in data['bank1-payment'] %}
+              <!-- payment doesn't match -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank1-amount-received'] }}</td>
+              </tr>  
+              
+              {% elseif '' in data['bank1-payment'] %}
+              <!-- reconciliation not done -->
+            
+              {% endif %}  
+
+
             </tbody>
           </table>
 
@@ -332,7 +359,7 @@
           <!-- Display form and button if reconciliation not done yet -->
           <form class="form" action="bank1-reconciliation.html" method="get">
 
-          <p class="govuk-body">Reconciliation has not been completed yet.</p>
+          <!--<p class="govuk-body">Reconciliation has not been completed yet.</p>-->
 
           <button class="govuk-button" data-module="govuk-button">
             Start reconciliation

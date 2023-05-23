@@ -93,12 +93,15 @@ caption {
 }
 
 // make the font-sizes smaller
+.govuk-warning-text__text,
+.govuk-inset-text,
 .moj-sub-navigation__item,
 .govuk-tabs__title,
 .govuk-tabs__list-item,
 .govuk-summary-list,
 .govuk-table,
-.govuk-tag {
+.govuk-tag,
+.govuk-body {
   font-size: 1rem;
 }
 
