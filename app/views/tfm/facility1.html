@@ -342,46 +342,78 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 <th scope="col" class="govuk-table__header">Utilisation</th>
                 <th scope="col" class="govuk-table__header">UKEF cover</th>
                 <th scope="col" class="govuk-table__header">UKEF exposure</th>
-                <th scope="col" class="govuk-table__header">Fee payable to UKEF</th>
                 <th scope="col" class="govuk-table__header">Fees accrued</th>
+                <th scope="col" class="govuk-table__header">Fee payable to UKEF</th>
+                <th scope="col" class="govuk-table__header">UKEF reconciliation</th>
               </tr>
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><a href="bank1">{{ data['report-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank1">{{ data['report-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">GBP 4,000.00</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+                <td class="govuk-table__cell">
+                    {% if 'Yes' in data['bank1-payment'] %}
+                    <!-- payment matches -->
+                    <strong class="govuk-tag govuk-tag--green">
+                        Matches
+                    </strong>
+                    {% elseif 'No' in data['bank1-payment'] %}
+                    <!-- payment doesn't match -->
+                    <strong class="govuk-tag govuk-tag--yellow">
+                        Does not match
+                    </strong>
+                    {% elseif '' in data['bank1-payment'] %}
+                    <!-- reconciliation not done -->
+                    <strong class="govuk-tag govuk-tag--blue">
+                        Pending
+                    </strong>
+                    {% endif %}  
+                    </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><a href="#">{{ data['last-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['last-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">GBP 3,000.00</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--green">
+                    Matches
+                    </strong>
+                </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><a href="#">{{ data['3rd-month'] }}</a></th>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['3rd-month'] }}</a></th>
+                <td class="govuk-table__cell govuk-!-font-weight-regular">GBP {{ data['facility-1-limit'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">GBP 2,000.00</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--yellow">
+                    Does not match
+                    </strong>
+                </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header"><a href="#">{{ data['4th-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['4th-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-cover'] }}</td>
+                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">GBP 1,000.00</td>
+                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }}</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                    Matches
+                  </strong></td>
               </tr>
             </tbody>
           </table>

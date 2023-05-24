@@ -382,36 +382,33 @@
               Reported fee payable
             </dt>
             <dd class="govuk-summary-list__value">
-              GBP {{ data['bank-1-fee-payable'] }}
-            </dd>
-            <dd>
+              GBP {{ data['bank-1-fee-payable'] }} 
             </dd>
           </div>  
           
           {% if 'Yes' in data['bank1-payment'] %}
-          <!-- Display the reported bank fee payable -->
+          <!-- It matches - display the reported bank fee payable -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Payment received
             </dt>
             <dd class="govuk-summary-list__value">
-              GBP {{ data['bank-1-fee-payable'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-
+              GBP {{ data['bank-1-fee-payable'] }} <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
+                Matches
+            </strong>
             </dd>
           </div> 
           
           {% else %}
-          <!-- Display the fee received -->
+          <!-- It doesn't match - display the fee received -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-third">
             Amount received
             </dt>
             <dd class="govuk-summary-list__value">
-                GBP {{ data['bank1-amount-received'] }}
-            </dd>
-            <dd class="govuk-summary-list__actions">
+                GBP {{ data['bank1-amount-received'] }} <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-2">
+                  Does not match
+              </strong>
             </dd>
           </div>
           {% endif %}
