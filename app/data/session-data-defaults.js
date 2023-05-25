@@ -64,6 +64,9 @@ module.exports = {
   'bank1-reconciliation': 'not-done',
   'bank1-payment': '',
 
+  'bank2-reconciliation': 'not-done',
+  'bank2-payment': '',
+
   // FACILITY 1 VALUES
   'facility-1-updated': 'no',
   'facility-1-name': 'Compressors Ltd',

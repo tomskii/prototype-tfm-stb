@@ -105,6 +105,12 @@ caption {
   font-size: 1rem;
 }
 
+@media (min-width: 40.0625em) {
+.govuk-accordion__section-button {
+    font-size: 2rem;
+    line-height: 1.25;
+}}
+
 // make the horizontal rules darker and thicker
 .govuk-section-break--visible {
   border-bottom: 3px solid $govuk-text-colour !important;

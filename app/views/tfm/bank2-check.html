@@ -1,0 +1,112 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Check your answers - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  {% include "includes/head.html" %}
+  <div class="moj-primary-navigation">
+    <div class="moj-primary-navigation__container">
+      <div class="moj-primary-navigation__nav">
+        <nav class="moj-primary-navigation" aria-label="Primary navigation">
+          <ul class="moj-primary-navigation__list">
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="#">All deals</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" href="index">All facilities</a>
+            </li>
+            <li class="moj-primary-navigation__item">
+              <a class="moj-primary-navigation__link" aria-current="page" href="reports">Bank reports</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block pageScripts %}
+  {% include "includes/scripts.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h1 class="govuk-heading-xl">Check your answers</h1>
+        <h2 class="govuk-heading-m govuk-!-font-weight-bold">{{ data['bank-1-name'] }}, {{ data['report-month'] }}</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Has GBP {{ data['bank-1-fee-payable'] }} been received?
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ data['bank1-payment'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank1-reconciliation">
+                Change<span class="govuk-visually-hidden"> Has GBP {{ data['bank-1-fee-payable'] }} been received?</span>
+              </a>
+            </dd>
+          </div>
+
+          {% if 'No' in data['bank1-payment'] %}
+          <!-- Display amount received if no to the previous question -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key govuk-!-width-one-third">
+            Amount received
+            </dt>
+            <dd class="govuk-summary-list__value">
+                GBP {{ data['bank1-amount-received'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank2-reconciliation">
+                Change<span class="govuk-visually-hidden"> amount received</span>
+              </a>
+            </dd>
+          </div>
+          {% else %}
+          <!-- Display nothing -->
+          {% endif %}
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+                When was the payment received?
+            </dt>
+            <dd class="govuk-summary-list__value">
+                {{ ( data['bank1-year'] + "-" + data['bank1-month'] + "-" + data['bank1-day'] ) | govukDate }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="bank2-reconciliation">
+                Change<span class="govuk-visually-hidden"> when was the payment received?</span>
+              </a>
+            </dd>
+          </div>
+        </dl>
+
+        <form class="form" action="bank2#report-month" method="get">
+          <input type="hidden" name="answers-checked" value="true">
+          <button class="govuk-button" data-module="govuk-button">
+            Confirm and save
+          </button>
+          <input type="hidden" name="bank2-reconciliation" value="done">
+        </form>
+      </div>
+
+
+
+
+
+
+
+
+    
+  </div>
+</div>
+{% endblock %}
