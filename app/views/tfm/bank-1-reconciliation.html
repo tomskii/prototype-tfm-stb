@@ -39,7 +39,7 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
-    <form class="form" action="bank2-check" method="get">
+    <form class="form" action="bank-1-check" method="get">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Reconciliation</h1>
     
     <h2 class="govuk-heading-m govuk-!-font-weight-bold">{{ data['bank-1-name'] }}, {{ data['report-month'] }}</h2>
@@ -61,7 +61,7 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
             Payment reference
             </dt>
             <dd class="govuk-summary-list__value">
-            AB12345
+              {{ data['bank-1-reference'] }}
             </dd>
             </div>
 
@@ -74,14 +74,14 @@ Reconciliation - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK Prot
               </legend>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="yes" name="bank1-payment" type="radio" value="Yes" {{ checked('bank1-payment','Yes') }}>
+                  <input class="govuk-radios__input" id="yes" name="bank-1-payment" type="radio" value="Yes" {{ checked('bank-1-payment','Yes') }}>
                   <label class="govuk-label govuk-radios__label" for="Yes">
                     Yes
                   </label>
                 </div>
                 
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="no" name="bank1-payment" type="radio" value="No" {{ checked('bank1-payment','No') }} data-aria-controls="conditional-no">
+                  <input class="govuk-radios__input" id="no" name="bank-1-payment" type="radio" value="No" {{ checked('bank-1-payment','No') }} data-aria-controls="conditional-no">
                   <label class="govuk-label govuk-radios__label" for="No">
                     No
                   </label>

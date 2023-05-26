@@ -47,16 +47,16 @@ Check your answers - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK 
             Has GBP {{ data['bank-1-fee-payable'] }} been received?
             </dt>
             <dd class="govuk-summary-list__value">
-                {{ data['bank1-payment'] }}
+                {{ data['bank-1-payment'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank1-reconciliation">
+              <a class="govuk-link" href="bank-1-reconciliation">
                 Change<span class="govuk-visually-hidden"> Has GBP {{ data['bank-1-fee-payable'] }} been received?</span>
               </a>
             </dd>
           </div>
 
-          {% if 'No' in data['bank1-payment'] %}
+          {% if 'No' in data['bank-1-payment'] %}
           <!-- Display amount received if no to the previous question -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key govuk-!-width-one-third">
@@ -66,7 +66,7 @@ Check your answers - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK 
                 GBP {{ data['bank1-amount-received'] }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank1-reconciliation">
+              <a class="govuk-link" href="bank-1-reconciliation">
                 Change<span class="govuk-visually-hidden"> amount received</span>
               </a>
             </dd>
@@ -83,19 +83,19 @@ Check your answers - {{ data['bank-1-name'] }} – {{ serviceName }} – GOV.UK 
                 {{ ( data['bank1-year'] + "-" + data['bank1-month'] + "-" + data['bank1-day'] ) | govukDate }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="bank1-reconciliation">
+              <a class="govuk-link" href="bank-1-reconciliation">
                 Change<span class="govuk-visually-hidden"> when was the payment received?</span>
               </a>
             </dd>
           </div>
         </dl>
 
-        <form class="form" action="bank1#report-month" method="get">
+        <form class="form" action="bank-1#report-month" method="get">
           <input type="hidden" name="answers-checked" value="true">
           <button class="govuk-button" data-module="govuk-button">
             Confirm and save
           </button>
-          <input type="hidden" name="bank1-reconciliation" value="done">
+          <input type="hidden" name="bank-1-reconciliation" value="done">
         </form>
       </div>
 

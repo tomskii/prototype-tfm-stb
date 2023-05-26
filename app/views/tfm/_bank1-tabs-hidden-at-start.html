@@ -203,7 +203,7 @@
     
 
 
-    {% if 'not-done' in data['bank1-reconciliation'] %}
+    {% if 'not-done' in data['bank-1-reconciliation'] %}
     <!-- display start reconciliation button  and the report without the tabs-->
     <div class="moj-page-header-actions">
 
@@ -217,7 +217,7 @@
       <div class="moj-page-header-actions__actions">
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
-            <form class="form" action="bank1-reconciliation.html" method="get">
+            <form class="form" action="bank-1-reconciliation.html" method="get">
             <button class="govuk-button moj-button-menu__item govuk-button--primary moj-page-header-actions__action" data-module="govuk-button">
               Start reconciliation
             </button>
@@ -236,7 +236,7 @@
 
 
 
-  {% elif 'done' in data['bank1-reconciliation'] %}
+  {% elif 'done' in data['bank-1-reconciliation'] %}
   <!-- display the tabs, the report and the reconciled data -->
   <span class="govuk-caption-xl">{{ data['report-month'] }}</span>
   <h1 class="govuk-heading-xl govuk-!-margin-bottom-7">
@@ -292,7 +292,7 @@
         </dd>
       </div>  
       
-      {% if 'Yes' in data['bank1-payment'] %}
+      {% if 'Yes' in data['bank-1-payment'] %}
       <!-- Display the reported bank fee payable -->
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">

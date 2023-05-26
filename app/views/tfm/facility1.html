@@ -349,7 +349,7 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank1">{{ data['report-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1">{{ data['report-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
                 <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
@@ -357,20 +357,20 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 <td class="govuk-table__cell">GBP 4,000.00</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">
-                    {% if 'Yes' in data['bank1-payment'] %}
+                    {% if 'Yes' in data['bank-1-payment'] %}
                     <!-- payment matches -->
                     <strong class="govuk-tag govuk-tag--green">
-                        Matches
+                        Payment matches
                     </strong>
-                    {% elseif 'No' in data['bank1-payment'] %}
+                    {% elseif 'No' in data['bank-1-payment'] %}
                     <!-- payment doesn't match -->
                     <strong class="govuk-tag govuk-tag--yellow">
-                        Does not match
+                        Payment does not match
                     </strong>
-                    {% elseif '' in data['bank1-payment'] %}
+                    {% elseif '' in data['bank-1-payment'] %}
                     <!-- reconciliation not done -->
                     <strong class="govuk-tag govuk-tag--blue">
-                        Pending
+                        Pending reconciliation
                     </strong>
                     {% endif %}  
                     </td>
@@ -385,7 +385,7 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">
-                    Matches
+                    Payment matches
                     </strong>
                 </td>
               </tr>
@@ -399,7 +399,7 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--yellow">
-                    Does not match
+                    Payment does not match
                     </strong>
                 </td>
               </tr>
@@ -412,7 +412,7 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 <td class="govuk-table__cell">GBP 1,000.00</td>
                 <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }}</td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
-                    Matches
+                    Payment matches
                   </strong></td>
               </tr>
             </tbody>

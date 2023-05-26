@@ -64,9 +64,9 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
 
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank1">{{ data['bank-1-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1">{{ data['bank-1-name'] }}</a></th>
             
-            {% if 'Yes' in data['bank1-payment'] %}
+            {% if 'Yes' in data['bank-1-payment'] %}
             <!-- payment Payment matches -->
             <td class="govuk-table__cell" data-sort-value="2">
               <strong class="govuk-tag govuk-tag--green">
@@ -74,15 +74,15 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
               </strong>
             </td>
 
-            {% elseif 'No' in data['bank1-payment'] %}
+            {% elseif 'No' in data['bank-1-payment'] %}
             <!-- payment doesn't match -->
             <td class="govuk-table__cell" data-sort-value="3">
             <strong class="govuk-tag govuk-tag--yellow">
-              Does not match
+              Payment does not match
             </strong>
             </td>
 
-            {% elseif '' in data['bank1-payment'] %}
+            {% elseif '' in data['bank-1-payment'] %}
             <!-- reconciliation not done -->
             <td class="govuk-table__cell" data-sort-value="1">
             <strong class="govuk-tag govuk-tag--blue">
@@ -93,13 +93,32 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
             
           </tr>
           <tr class="govuk-table__row">
-            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-2-name'] }}</a></th>
+            <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-2">{{ data['bank-2-name'] }}</a></th>
 
-            <td class="govuk-table__cell" data-sort-value="3">
-              <strong class="govuk-tag govuk-tag--yellow">
-                Payment does not match
+            {% if 'Yes' in data['bank-2-payment'] %}
+            <!-- payment Payment matches -->
+            <td class="govuk-table__cell" data-sort-value="2">
+              <strong class="govuk-tag govuk-tag--green">
+                Payment matches
               </strong>
             </td>
+
+            {% elseif 'No' in data['bank-2-payment'] %}
+            <!-- payment doesn't match -->
+            <td class="govuk-table__cell" data-sort-value="3">
+            <strong class="govuk-tag govuk-tag--yellow">
+              Payment does not match
+            </strong>
+            </td>
+
+            {% elseif '' in data['bank-2-payment'] %}
+            <!-- reconciliation not done -->
+            <td class="govuk-table__cell" data-sort-value="1">
+            <strong class="govuk-tag govuk-tag--blue">
+              Pending reconciliation
+            </strong>
+          </td>
+            {% endif %}  
             
           </tr>
           <tr class="govuk-table__row">
@@ -113,9 +132,9 @@ Bank reports – {{ serviceName }} – GOV.UK Prototype Kit
           </tr>
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['bank-4-name'] }}</a></th>
-            <td class="govuk-table__cell" data-sort-value="2">
-              <strong class="govuk-tag govuk-tag--green">
-                Payment matches
+            <td class="govuk-table__cell" data-sort-value="3">
+              <strong class="govuk-tag govuk-tag--yellow">
+                Payment does not match
               </strong>
             </td>
              

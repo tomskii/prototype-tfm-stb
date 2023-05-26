@@ -162,14 +162,14 @@
 
           <h2 class="govuk-heading-l">Report</h2>
           
-          {% if 'Yes' in data['bank1-payment'] %}
+          {% if 'Yes' in data['bank-1-payment'] %}
           <!-- payment matches -->
           
-          {% elseif 'No' in data['bank1-payment'] %}
+          {% elseif 'No' in data['bank-1-payment'] %}
           <!-- payment doesn't match -->
            
           
-          {% elseif '' in data['bank1-payment'] %}
+          {% elseif '' in data['bank-1-payment'] %}
           <!-- reconciliation not done -->
             <p class="govuk-body"><a href="#reconciliation">Reconciliation</a> has not been completed yet.</p>
           {% endif %}
@@ -254,25 +254,25 @@
                 <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
               </tr>
 
-              {% if 'Yes' in data['bank1-payment'] %}
+              {% if 'Yes' in data['bank-1-payment'] %}
               <!-- payment matches -->
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
                 <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<br><strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
-                  matches
+                  Payment matches
                 </strong></td>
               </tr>
                 
-              {% elseif 'No' in data['bank1-payment'] %}
+              {% elseif 'No' in data['bank-1-payment'] %}
               <!-- payment doesn't match -->
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
                 <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank1-amount-received'] }} <br><strong class="govuk-tag govuk-tag--yellow govuk-!-margin-top-2">
-                  Does not match
+                  Payment does not match
                 </strong></td>
               </tr>  
               
-              {% elseif '' in data['bank1-payment'] %}
+              {% elseif '' in data['bank-1-payment'] %}
               <!-- reconciliation not done -->
             
               {% endif %}  
@@ -289,9 +289,9 @@
           
           <h2 class="govuk-heading-l">Reconciliation</h2>
 
-          {% if 'not-done' in data['bank1-reconciliation'] %}
+          {% if 'not-done' in data['bank-1-reconciliation'] %}
           <!-- Display form and button if reconciliation not done yet -->
-          <form class="form" action="bank1-reconciliation.html" method="get">
+          <form class="form" action="bank-1-reconciliation.html" method="get">
 
           <!--<p class="govuk-body">Reconciliation has not been completed yet.</p>-->
 
@@ -320,7 +320,7 @@
             </dd>
           </div>  
           
-          {% if 'Yes' in data['bank1-payment'] %}
+          {% if 'Yes' in data['bank-1-payment'] %}
           <!-- It matches - display the reported bank fee payable -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -328,7 +328,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
               GBP {{ data['bank-1-fee-payable'] }} <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
-                Matches
+                Payment matches
             </strong>
             </dd>
           </div> 
@@ -341,7 +341,7 @@
             </dt>
             <dd class="govuk-summary-list__value">
                 GBP {{ data['bank1-amount-received'] }} <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-2">
-                  Does not match
+                  Payment does not match
               </strong>
             </dd>
           </div>
