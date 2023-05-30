@@ -59,14 +59,14 @@ module.exports = {
   'bank-9-report-received': 'April 2023',
   'bank-10-report-received': 'April 2023',
 
-  'bank-1-fee-payable': '12,000.00',
+  'bank-1-fee-payable': '11,800.00',
   'bank-1-reconciliation': 'not-done',
   'bank-1-payment': '',
   'bank-1-reference': 'AB12345',
 
   'bank-2-reconciliation': 'not-done',
   'bank-2-payment': '',
-  'bank-2-fee-payable': '44,900.00',
+  'bank-2-fee-payable': '30,350.00',
   'bank-2-reference': 'XY51678',
 
   // FACILITY 1 VALUES
@@ -92,14 +92,14 @@ module.exports = {
   'facility-1-accrued': '10,000.00',
 
   // FACILITY 2 VALUES
-  'facility-2-name': 'Petroleum Ltd',
+  'facility-2-name': 'Petroleum Pipes Ltd',
   'facility-2-ukef-id': '0020001413',
   'facility-2-limit': '300,000.00',
   'facility-2-cover': '80%',
   'facility-2-max': '240,000.00',
   'facility-2-utilisation': '125,000.00',
   'facility-2-exposure': '100,000.00',
-  'facility-2-accrued': '3000.00',
+  'facility-2-accrued': '3600.00',
   'facility-2-paid': '800.00',
   'facility-2-type': 'Contingent',
   'facility-2-end-date': '18 September 2026',
@@ -118,7 +118,7 @@ module.exports = {
   'facility-3-end-date': '16 February 2025',
 
   // FACILITY 4 VALUES  
-  'facility-4-name': 'Motors Ltd',
+  'facility-4-name': 'Motor Technics Ltd',
   'facility-4-ukef-id': '	0020001499',
   'facility-4-limit': '1,500,000.00',
   'facility-4-cover': '80%',
@@ -126,7 +126,7 @@ module.exports = {
   'facility-4-utilisation': '500,000.00',
   'facility-4-exposure': '400,000.00',
   'facility-4-accrued': '20,000.00',
-  'facility-4-paid': '2,000.00',
+  'facility-4-paid': '1,800.00',
   'facility-4-type': 'Cash',
   'facility-4-end-date': '23 March 2025',
 
@@ -144,7 +144,7 @@ module.exports = {
   'facility-5-end-date': '23 July 2025',
 
   // FACILITY 6 VALUES
-  'facility-6-name': 'XYZ Aircrafts Ltd',
+  'facility-6-name': 'AeroXperts Ltd',
   'facility-6-ukef-id': '0020001697',
   'facility-6-limit': '1,000,000.00',
   'facility-6-cover': '80%',
@@ -159,7 +159,7 @@ module.exports = {
   // FACILITY 10 VALUES
   'facility-10-updated': 'no',
   'facility-10-name': 'Marine Equipment Ltd',
-  'facility-10-buyer': 'Maritime Co Ltd',
+  'facility-10-buyer': 'Maritime Co Incorporated',
   'facility-10-ukef-id': '0020001380',
   'facility-10-deal-id': '0030597675',
   'facility-10-ref': '0239407',
@@ -175,7 +175,7 @@ module.exports = {
   'facility-10-max': '2,000,000.00',
   'facility-10-utilisation': '1,500,000.00',
   'facility-10-exposure': '1,200,000.00',
-  'facility-10-paid': '3,500.00',
+  'facility-10-paid': '3,550.00',
   'facility-10-accrued': '15,000.00',
 
 // FACILITY 11 VALUES
@@ -219,7 +219,7 @@ module.exports = {
   'facility-12-max': '800,000.00',
   'facility-12-utilisation': '480,000.00',
   'facility-12-exposure': '384,000.00',
-  'facility-12-paid': '5,000.00',
+  'facility-12-paid': '1,000.00',
   'facility-12-accrued': '20,000.00',
 
   // FACILITY 13 VALUES
@@ -351,12 +351,12 @@ module.exports = {
 'facility-18-max': '960,000.00',
 'facility-18-utilisation': '720,000.00',
 'facility-18-exposure': '576,000.00',
-'facility-18-paid': '3,500.00',
+'facility-18-paid': '1,500.00',
 'facility-18-accrued': '12,000.00',
 
 // FACILITY 19 VALUES
 'facility-19-updated': 'no',
-'facility-19-name': 'Britannia Energy Solutions Ltd',
+'facility-19-name': 'Britannia Energy Ltd',
 'facility-19-buyer': 'Global Power Inc.',
 'facility-19-ukef-id': '0020003178',
 'facility-19-deal-id': '0031025991',
@@ -373,7 +373,7 @@ module.exports = {
 'facility-19-max': '640,000.00',
 'facility-19-utilisation': '480,000.00',
 'facility-19-exposure': '384,000.00',
-'facility-19-paid': '2,000.00',
+'facility-19-paid': '1,000.00',
 'facility-19-accrued': '9,500.00',
 
 // FACILITY 20 VALUES
@@ -395,7 +395,7 @@ module.exports = {
 'facility-20-max': '1,200,000.00',
 'facility-20-utilisation': '900,000.00',
 'facility-20-exposure': '720,000.00',
-'facility-20-paid': '4,500.00',
+'facility-20-paid': '2,000.00',
 'facility-20-accrued': '15,000.00',
 
 // FACILITY 21 VALUES
@@ -444,7 +444,7 @@ module.exports = {
 
 // FACILITY 23 VALUES
 'facility-23-updated': 'no',
-'facility-23-name': 'British Pharma Solutions Ltd',
+'facility-23-name': 'British Pharma Supplies Ltd',
 'facility-23-buyer': 'Global Healthcare Inc.',
 'facility-23-ukef-id': '0020005379',
 'facility-23-deal-id': '0031725945',

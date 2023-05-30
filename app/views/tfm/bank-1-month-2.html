@@ -38,12 +38,12 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
                 <h4 class="moj-side-navigation__title">2023</h4>
                 <ul class="moj-side-navigation__list">
-                    <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                    <a href="bank-1" aria-current="location">April</a>
+                    <li class="moj-side-navigation__item">
+                    <a href="bank-1">April</a>
                     </li>
             
-                    <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-2">March</a>
+                    <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                    <a href="bank-1-month-2" aria-current="location">March</a>
                     </li>
             
                     <li class="moj-side-navigation__item">
@@ -140,7 +140,7 @@
       {{ data['bank-1-name'] }}
     </h1>
     <h2 class="govuk-heading-l">
-      {{ data['report-month'] }}
+      {{ data['last-month'] }}
     </h2> 
     <div class="govuk-tabs" data-module="govuk-tabs">
         <h2 class="govuk-tabs__title">
@@ -163,18 +163,6 @@
 
           <h2 class="govuk-heading-l">Report</h2>
           
-          {% if 'Yes' in data['bank-1-payment'] %}
-          <!-- payment matches -->
-          
-          {% elseif 'No' in data['bank-1-payment'] %}
-          <!-- payment doesn't match -->
-           
-          
-          {% elseif '' in data['bank-1-payment'] %}
-          <!-- reconciliation not done -->
-            <p class="govuk-body"><a href="#reconciliation">Reconciliation</a> has not been completed yet.</p>
-          {% endif %}
-
           <table class="govuk-table" data-module="moj-sortable-table">
             <caption class="govuk-table__caption govuk-table__caption--l"></caption>
             <thead class="govuk-table__head">
@@ -191,95 +179,81 @@
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-1-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-1-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-1-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-1-paid'] }} </td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001371</a></th>
+                <td class="govuk-table__cell">Compressors Ltd</td>
+                <td class="govuk-table__cell">GBP 600,000.00</td>
+                <td class="govuk-table__cell">GBP 360,000.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 288,000.00</td>
+                <td class="govuk-table__cell">GBP 9,000.00 </td>
+                <td class="govuk-table__cell">GBP 900.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-2-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-2-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-2-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-2-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-2-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-2-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-2-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-2-paid'] }} </td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001413</a></th>
+                <td class="govuk-table__cell">Petroleum Pipes Ltd</td>
+                <td class="govuk-table__cell">GBP 300,000.00</td>
+                <td class="govuk-table__cell">GBP 112,500.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 90,000.00</td>
+                <td class="govuk-table__cell">GBP 2,800.00 </td>
+                <td class="govuk-table__cell">GBP 720.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-3-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-3-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-3-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-3-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-3-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-3-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-3-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-3-paid'] }} </td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001467</a></th>
+                <td class="govuk-table__cell">Pharmaceuticals Ltd</td>
+                <td class="govuk-table__cell">GBP 800,000.00</td>
+                <td class="govuk-table__cell">GBP 180,000.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 144,000.00</td>
+                <td class="govuk-table__cell">GBP 48,000.00 </td>
+                <td class="govuk-table__cell">GBP 1,800.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-4-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-4-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-4-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-4-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-4-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-4-exposure'] }}</td>  
-                <td class="govuk-table__cell">GBP {{ data['facility-4-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-4-paid'] }} </td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">	0020001499</a></th>
+                <td class="govuk-table__cell">Motors Ltd</td>
+                <td class="govuk-table__cell">GBP 1,500,000.00</td>
+                <td class="govuk-table__cell">GBP 450,000.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 360,000.00</td>  
+                <td class="govuk-table__cell">GBP 18,200.00 </td>
+                <td class="govuk-table__cell">GBP 1,620.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-5-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-5-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-5-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-5-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-5-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-5-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-5-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-5-paid'] }} </td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001507</a></th>
+                <td class="govuk-table__cell">A1 Manifolds Ltd</td>
+                <td class="govuk-table__cell">GBP 2,500,000.00</td>
+                <td class="govuk-table__cell">GBP 1,710,000.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 1,368,000.00</td>
+                <td class="govuk-table__cell">GBP 45,000.00 </td>
+                <td class="govuk-table__cell">GBP 4,500.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">{{ data['facility-6-ukef-id'] }}</a></th>
-                <td class="govuk-table__cell">{{ data['facility-6-name'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-6-limit'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-6-utilisation'] }}</td>
-                <td class="govuk-table__cell">{{ data['facility-6-cover'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-6-exposure'] }}</td>
-                <td class="govuk-table__cell">GBP {{ data['facility-6-accrued'] }} </td>
-                <td class="govuk-table__cell">GBP {{ data['facility-6-paid'] }} </td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total reported fees payable</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<!--{{((data['facility-1-paid'] | float) + (data['facility-2-paid'] | float) + (data['facility-3-paid'] | float) + (data['facility-4-paid'] | float) + (data['facility-5-paid'] | float) + (data['facility-6-paid'] | float)).toFixed(2)}}--></td>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001697</a></th>
+                <td class="govuk-table__cell">XYZ Aircrafts Ltd</td>
+                <td class="govuk-table__cell">GBP 1,000,000.00</td>
+                <td class="govuk-table__cell">GBP 711,000.00</td>
+                <td class="govuk-table__cell">80%</td>
+                <td class="govuk-table__cell">GBP 568,800.00</td>
+                <td class="govuk-table__cell">GBP 18,800.00 </td>
+                <td class="govuk-table__cell">GBP 1,080.00 </td>
               </tr>
             </tbody>
             <tfoot>
-              {% if 'Yes' in data['bank-1-payment'] %}
-              <!-- payment matches -->
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Total reported fees payable</th>
+                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 10,620.00</td>
+              </tr>
               <tr class="govuk-table__row">
                 <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank-1-fee-payable'] }}<br><strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
+                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP 10,620.00<br><strong class="govuk-tag govuk-tag--green govuk-!-margin-top-2">
                   Payment<br>matches
                 </strong></td>
               </tr>
-                
-              {% elseif 'No' in data['bank-1-payment'] %}
-              <!-- payment doesn't match -->
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-text-align-right" colspan="7">Payment received</th>
-                <td class="govuk-table__cell govuk-!-font-weight-bold">GBP {{ data['bank1-amount-received'] }}<br><strong class="govuk-tag govuk-tag--yellow govuk-!-margin-top-2">
-                  Payment does<br>not match
-                </strong></td>
-              </tr>  
-              
-              {% elseif '' in data['bank-1-payment'] %}
-              <!-- reconciliation not done -->
-            
-              {% endif %}  
-            </tfoot>
-          </table>
+          </tfoot>
+        </table>
+
+          
           </div>
         <!-- end of report tab -->
 
@@ -289,18 +263,6 @@
           
           <h2 class="govuk-heading-l">Reconciliation</h2>
 
-          {% if 'not-done' in data['bank-1-reconciliation'] %}
-          <!-- Display form and button if reconciliation not done yet -->
-          <form class="form" action="bank-1-reconciliation.html" method="get">
-
-          <button class="govuk-button" data-module="govuk-button">
-            Start reconciliation
-          </button>
-        </form>
-        <!--end of form -->
-
-          
-          {% else %}
 
           <!-- Display reconciliation data -->
 
@@ -314,44 +276,31 @@
               Reported fee payable
             </dt>
             <dd class="govuk-summary-list__value">
-              GBP {{ data['bank-1-fee-payable'] }} 
+              GBP 10,620.00 
             </dd>
           </div>  
           
-          {% if 'Yes' in data['bank-1-payment'] %}
+
           <!-- It matches - display the reported bank fee payable -->
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Payment received
             </dt>
             <dd class="govuk-summary-list__value">
-              GBP {{ data['bank-1-fee-payable'] }} <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
+              GBP 10,620.00 <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-2">
                 Payment matches
             </strong>
             </dd>
           </div> 
           
-          {% else %}
-          <!-- It doesn't match - display the fee received -->
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key govuk-!-width-one-third">
-            Amount received
-            </dt>
-            <dd class="govuk-summary-list__value">
-                GBP {{ data['bank1-amount-received'] }} <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-left-2">
-                  Payment does not match
-              </strong>
-            </dd>
-          </div>
-          {% endif %}
-
+          
 
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Date received
             </dt>
             <dd class="govuk-summary-list__value">
-              8 May 2023
+              8 April 2023
             </dd>
           </div> 
           
@@ -360,7 +309,7 @@
               Reconciled by
             </dt>
             <dd class="govuk-summary-list__value">
-              {{ data['signed-in-name'] }}, {{ data['todays-date-full'] }} at {{ data['time-now'] }}
+              {{ data['signed-in-name'] }}, 9 April 2023 at {{ data['time-now'] }}
             </dd>
           </div>
 
@@ -368,7 +317,6 @@
 
         <!--end of reconciliation data -->
 
-          {% endif %}
         </div>
       </div>
   </div>
