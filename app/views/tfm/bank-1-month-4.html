@@ -38,20 +38,24 @@
             <nav class="moj-side-navigation" aria-label="Side navigation">
                 <h4 class="moj-side-navigation__title">2023</h4>
                 <ul class="moj-side-navigation__list">
-                    <li class="moj-side-navigation__item">
-                    <a href="bank-1">April</a>
+                  <li class="moj-side-navigation__item">
+                    <a href="bank-1">{{ data['report-month-only'] }}</a>
                     </li>
             
                     <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-2">March</a>
+                    <a href="bank-1-month-2">{{ data['last-month-only'] }}</a>
                     </li>
             
                     <li class="moj-side-navigation__item">
-                    <a href="bank-1-month-3" aria-current="location">February</a>
+                    <a href="bank-1-month-3">{{ data['3rd-month-only'] }}</a>
                     </li>
     
                     <li class="moj-side-navigation__item moj-side-navigation__item--active">
-                        <a href="bank-1-month-3" aria-current="location">January</a>
+                    <a href="bank-1-month-4" aria-current="location">{{ data['4th-month-only'] }}</a>
+                    </li>
+
+                    <li class="moj-side-navigation__item">
+                      <a href="#">January</a>
                     </li>
                 </ul>
 
@@ -179,64 +183,64 @@
             </thead>
             <tbody class="govuk-table__body">
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001371</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-1-ukef-id'] }}"><a href="facility1">0020001371</a></th>
                 <td class="govuk-table__cell">Compressors Ltd</td>
-                <td class="govuk-table__cell">GBP 600,000.00</td>
-                <td class="govuk-table__cell">GBP 291,600.00</td>
+                <td class="govuk-table__cell" data-sort-value="600000">GBP 600,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="291600">GBP 291,600.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 233,280.00</td>
-                <td class="govuk-table__cell">GBP 7,900.00 </td>
-                <td class="govuk-table__cell">GBP 729.00 </td>
+                <td class="govuk-table__cell" data-sort-value="233280">GBP 233,280.00</td>
+                <td class="govuk-table__cell" data-sort-value="7290">GBP 7,290.00</td>
+                <td class="govuk-table__cell" data-sort-value="729">GBP 729.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001413</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-2-ukef-id'] }}"><a href="facility1">0020001413</a></th>
                 <td class="govuk-table__cell">Petroleum Pipes Ltd</td>
-                <td class="govuk-table__cell">GBP 300,000.00</td>
-                <td class="govuk-table__cell">GBP 91,125.00</td>
+                <td class="govuk-table__cell" data-sort-value="300000">GBP 300,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="91125">GBP 91,125.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 72,900.00</td>
-                <td class="govuk-table__cell">GBP 1,432.00</td>
-                <td class="govuk-table__cell">GBP 583.20 </td>
+                <td class="govuk-table__cell" data-sort-value="72900">GBP 72,900.00</td>
+                <td class="govuk-table__cell" data-sort-value="1432">GBP 1,432.00</td>
+                <td class="govuk-table__cell" data-sort-value="583">GBP 583.20 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001467</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-3-ukef-id'] }}"><a href="facility1">0020001467</a></th>
                 <td class="govuk-table__cell">Pharmaceuticals Ltd</td>
-                <td class="govuk-table__cell">GBP 800,000.00</td>
-                <td class="govuk-table__cell">GBP 145,800.00</td>
+                <td class="govuk-table__cell" data-sort-value="800000">GBP 800,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="145800">GBP 145,800.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 116,640.00</td>
-                <td class="govuk-table__cell">GBP 45,000.00 </td>
-                <td class="govuk-table__cell">GBP 1,430.00 </td>
+                <td class="govuk-table__cell" data-sort-value="116640">GBP 116,640.00</td>
+                <td class="govuk-table__cell" data-sort-value="45000">GBP 45,000.00 </td>
+                <td class="govuk-table__cell" data-sort-value="1430">GBP 1,430.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">  0020001499</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-4-ukef-id'] }}"><a href="facility1">  0020001499</a></th>
                 <td class="govuk-table__cell">Motors Ltd</td>
-                <td class="govuk-table__cell">GBP 1,500,000.00</td>
-                <td class="govuk-table__cell">GBP 364,500.00</td>
+                <td class="govuk-table__cell" data-sort-value="1500000">GBP 1,500,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="364500">GBP 364,500.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 291,600.00</td>  
-                <td class="govuk-table__cell">GBP 13,500.00 </td>
-                <td class="govuk-table__cell">GBP 1,312.20 </td>
+                <td class="govuk-table__cell" data-sort-value="291600">GBP 291,600.00</td>  
+                <td class="govuk-table__cell" data-sort-value="13500">GBP 13,500.00 </td>
+                <td class="govuk-table__cell" data-sort-value="1312">GBP 1,312.20 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001507</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-5-ukef-id'] }}"><a href="facility1">0020001507</a></th>
                 <td class="govuk-table__cell">A1 Manifolds Ltd</td>
-                <td class="govuk-table__cell">GBP 2,500,000.00</td>
-                <td class="govuk-table__cell">GBP 1,385,100.00</td>
+                <td class="govuk-table__cell" data-sort-value="2500000">GBP 2,500,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="1385100">GBP 1,385,100.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 1,108,080.00</td>
-                <td class="govuk-table__cell">GBP 36,450.00 </td>
-                <td class="govuk-table__cell">GBP 3,645.00 </td>
+                <td class="govuk-table__cell" data-sort-value="1108080">GBP 1,108,080.00</td>
+                <td class="govuk-table__cell" data-sort-value="36450">GBP 36,450.00 </td>
+                <td class="govuk-table__cell" data-sort-value="3645">GBP 3,645.00 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="facility1">0020001697</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular" data-sort-value="{{ data['facility-6-ukef-id'] }}"><a href="facility1">0020001697</a></th>
                 <td class="govuk-table__cell">XYZ Aircrafts Ltd</td>
-                <td class="govuk-table__cell">GBP 1,000,000.00</td>
-                <td class="govuk-table__cell">GBP 575,910.00</td>
+                <td class="govuk-table__cell" data-sort-value="1000000">GBP 1,000,000.00</td>
+                <td class="govuk-table__cell" data-sort-value="575910">GBP 575,910.00</td>
                 <td class="govuk-table__cell">80%</td>
-                <td class="govuk-table__cell">GBP 460,728.00</td>
-                <td class="govuk-table__cell">GBP 15,122.00 </td>
-                <td class="govuk-table__cell">GBP 874.80 </td>
+                <td class="govuk-table__cell" data-sort-value="460728">GBP 460,728.00</td>
+                <td class="govuk-table__cell" data-sort-value="15122">GBP 15,122.00 </td>
+                <td class="govuk-table__cell" data-sort-value="874">GBP 874.80 </td>
               </tr>
             </tbody>
             <tfoot>

@@ -38,8 +38,8 @@ Facility {{ data['facility-2-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
           <div class="ukef-heading-l" data-cy="exporter-name">{{ data['facility-2-name'] }}</div>
       </div>
       <div class="case-summary-buyer" data-cy="buyer-name-column">
-          <div class="label"><!--Buyer label--></div>
-          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name--></div>
+          <div class="label"><!--Buyer label-->Buyer</div>
+          <div class="ukef-heading-l" data-cy="buyer-name"><!--Buyer name-->{{ data['facility-2-buyer'] }}</div>
       </div>
   </div>
   <div class="case-summary-overview-container">
@@ -376,7 +376,7 @@ Facility {{ data['facility-2-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                     </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['last-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-2">{{ data['last-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-2-limit'] }}</td>
                 <td class="govuk-table__cell">GBP 112,500.00</td>
                 <td class="govuk-table__cell">{{ data['facility-2-cover'] }}</td>
@@ -390,7 +390,7 @@ Facility {{ data['facility-2-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['3rd-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-3">{{ data['3rd-month'] }}</a></th>
                 <td class="govuk-table__cell govuk-!-font-weight-regular">GBP {{ data['facility-2-limit'] }}</td>
                 <td class="govuk-table__cell">	GBP 101,250.00</td>
                 <td class="govuk-table__cell">{{ data['facility-2-cover'] }}</td>
@@ -404,7 +404,7 @@ Facility {{ data['facility-2-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
                 </td>
               </tr>
               <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="#">{{ data['4th-month'] }}</a></th>
+                <th scope="row" class="govuk-table__header govuk-!-font-weight-regular"><a href="bank-1-month-4">{{ data['4th-month'] }}</a></th>
                 <td class="govuk-table__cell">GBP {{ data['facility-2-limit'] }}</td>
                 <td class="govuk-table__cell">GBP 91,125.00</td>
                 <td class="govuk-table__cell">{{ data['facility-2-cover'] }}</td>
