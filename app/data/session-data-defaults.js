@@ -115,7 +115,7 @@ module.exports = {
   'facility-2-max': '240,000.00',
   'facility-2-utilisation': '125,000.00',
   'facility-2-exposure': '100,000.00',
-  'facility-2-accrued': '3600.00',
+  'facility-2-accrued': '3,600.00',
   'facility-2-paid': '800.00',
   'facility-2-type': 'Contingent',
 

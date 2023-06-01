@@ -356,7 +356,7 @@
               Date received
             </dt>
             <dd class="govuk-summary-list__value">
-              8 May 2023
+              {{ ( data['bank1-year'] + "-" + data['bank1-month'] + "-" + data['bank1-day'] ) | govukDate }}
             </dd>
           </div> 
           
