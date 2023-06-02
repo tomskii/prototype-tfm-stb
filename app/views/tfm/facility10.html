@@ -8,12 +8,12 @@
 {% endblock %}
 
 {% block pageTitle %}
-Facility {{ data['facility-10-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['facility-10-name'] }} - {{ data['facility-10-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {% include "includes/head.html" %}
-  {% include "includes/primary-navigation.html" %}
+  {% include "includes/primary-nav-facilities.html" %}
 {% endblock %}
 
 {% block pageScripts %}

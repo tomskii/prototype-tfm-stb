@@ -8,12 +8,12 @@
 {% endblock %}
 
 {% block pageTitle %}
-Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['facility-1-name'] }} - {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {% include "includes/head.html" %}
-  {% include "includes/primary-navigation.html" %}
+  {% include "includes/primary-nav-facilities.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -27,7 +27,7 @@ Facility {{ data['facility-1-ukef-id'] }} – {{ serviceName }} – GOV.UK Proto
   <div>
       <div class="case-summary-deal-id">
           <div class="label">Deal ID</div>
-          <div class="ukef-heading-l" data-cy="ukef-deal-id">0030597665</div>
+          <div class="ukef-heading-l" data-cy="ukef-deal-id">{{ data['facility-1-deal-id'] }}</div>
       </div>
       <div class="case-summary-supplier chevron-right" data-cy="supplier-column">
           <div class="label">

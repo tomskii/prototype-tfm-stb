@@ -8,12 +8,12 @@
 {% endblock %}
 
 {% block pageTitle %}
-Facility {{ data['facility-23-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
+{{ data['facility-23-name'] }} - {{ data['facility-23-ukef-id'] }} – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
   {% include "includes/head.html" %}
-  {% include "includes/primary-navigation.html" %}
+  {% include "includes/primary-nav-facilities.html" %}
 {% endblock %}
 
 {% block pageScripts %}
@@ -161,7 +161,11 @@ Facility {{ data['facility-23-ukef-id'] }} – {{ serviceName }} – GOV.UK Prot
             Monthly reports
           </a>
         </li>
-
+        <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#amendments">
+              Amendments
+            </a>
+          </li>
       </ul>
       
         <div class="govuk-tabs__panel" id="details">
